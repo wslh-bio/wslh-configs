@@ -7,13 +7,12 @@ This repository stores WSLH-specific Nextflow profiles and configuration overlay
 - Keep pipeline-specific overrides separate from upstream workflow code.
 
 ## How it is used
-Pipelines include these configs at runtime and select a WSLH profile. Typical usage:
-
-- Include this repository's config file(s) with `-c`.
-- Select a WSLH profile with `-profile`.
+Pipelines include these configs at runtime using the `custom_config_base` parameter.
 
 Example:
-nf-run <pipeline> -c /path/to/custom-configs/<config>.config -profile wslh
+```
+nextflow run <pipeline> --custom_config_base "https://raw.githubusercontent.com/wslh-bio/wslh-configs/refs/heads/main/wslh-local-profile.config" -profile awsdev
+```
 
 ## Conventions
 - Add new WSLH profiles under a clearly named `profiles` section in the config file.
@@ -21,4 +20,4 @@ nf-run <pipeline> -c /path/to/custom-configs/<config>.config -profile wslh
 - Document any required environment variables or paths alongside the profile.
 
 ## Repository layout
-Add or update files to match your WSLH setup. Keep config names descriptive and aligned with the pipelines that consume them.
+Add or update configs to support running pipelines using the WSLH environment. Keep config names descriptive and aligned with the pipelines that consume them.
