@@ -1,4 +1,4 @@
-# custom-configs
+# wslh-configs
 This repository stores WSLH-specific Nextflow profiles and configuration overlays used by workflows to standardize execution on WSLH systems.
 
 ## Purpose
