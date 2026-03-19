@@ -11,7 +11,7 @@ Pipelines include these configs at runtime using the `custom_config_base` parame
 
 Example:
 ```
-nextflow run <pipeline> --custom_config_base "https://raw.githubusercontent.com/wslh-bio/wslh-configs/refs/heads/main/wslh-local-profile.config" -profile awsdev
+nextflow run <pipeline> --custom_config_base https://raw.githubusercontent.com/wslh-bio/wslh-configs/refs/heads/main -profile awsdev
 ```
 
 ## Conventions
